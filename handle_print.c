@@ -35,11 +35,11 @@ if (fmt[*ind - 1] == ' ')
 unknow_len += write(1, " ", 1);
 else if (width)
 {
-(*ind);
+--(*ind);
 while (fmt[*ind] != ' ' && fmt[*ind] != '%')
-(*ind);
+--(*ind);
 if (fmt[*ind] == ' ')
-(*ind);
+--(*ind);
 return (1);
 }
 unknow_len += write(1, &fmt[*ind], 1);
@@ -47,5 +47,4 @@ return (unknow_len);
 }
 return (printed_chars);
 }
-
 
